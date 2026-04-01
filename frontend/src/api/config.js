@@ -1,4 +1,4 @@
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://student-support-system-vb3e.onrender.com/api';
 
 // Helper for generic API calls that includes JWT
 export const apiClient = async (endpoint, options = {}) => {
