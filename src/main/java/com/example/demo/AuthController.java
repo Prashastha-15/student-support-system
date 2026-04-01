@@ -31,8 +31,15 @@ public class AuthController {
         String email = body.get("email");
         String password = body.get("password");
 
-        User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        java.util.Optional<User> optionalUser = userRepository.findByEmail(email);
+        
+        if (optionalUser.isEmpty()) {
+            Map<String, String> error = new HashMap<>();
+            error.put("error", "User not found. Please sign up first.");
+            return ResponseEntity.status(404).body(error);
+        }
+        
+        User user = optionalUser.get();
 
         if (!password.equals(user.getPassword())) {
             Map<String, String> error = new HashMap<>();

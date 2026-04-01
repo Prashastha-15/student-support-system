@@ -1,4 +1,4 @@
-export const API_BASE_URL = 'http://localhost:8080/api';
+export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api';
 
 // Helper for generic API calls that includes JWT
 export const apiClient = async (endpoint, options = {}) => {
@@ -19,7 +19,7 @@ export const apiClient = async (endpoint, options = {}) => {
     const response = await fetch(`${API_BASE_URL}${endpoint}`, config);
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.error || errorData.message || 'Request failed');
+      throw new Error(errorData.message || errorData.error || 'Request failed');
     }
     
     // Support APIs that might not return JSON (like delete with no content)
