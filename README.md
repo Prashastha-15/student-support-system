@@ -6,6 +6,9 @@
 [![MySQL](https://img.shields.io/badge/MySQL-Database-orange.svg)](https://www.mysql.com/)
 [![Gemini](https://img.shields.io/badge/AI-Google%20Gemini%20Pro-red.svg)](https://deepmind.google/technologies/gemini/)
 
+🔗 **Live Demo (Vercel)**: [https://student-support-system-ochre.vercel.app](https://student-support-system-ochre.vercel.app)  
+⚙️ **Backend API (Render)**: [https://student-support-system-vb3e.onrender.com](https://student-support-system-vb3e.onrender.com)
+
 A full-stack web application designed to monitor student academic performance, track attendance, and provide automated AI-driven pedagogical support. By leveraging the Google Gemini API, the system automatically analyzes student performance and generates targeted, actionable study tips to guide students who need support.
 
 ---
